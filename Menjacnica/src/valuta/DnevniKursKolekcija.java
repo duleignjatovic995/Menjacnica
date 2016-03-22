@@ -15,20 +15,40 @@ public class DnevniKursKolekcija implements IMenjacnica{
 	}
 
 	@Override
-	public void dodajDnevniKurs(GregorianCalendar datum) {
-		// TODO Auto-generated method stub
-		
+	public void dodajDnevniKurs(Valuta valuta, GregorianCalendar datum, double prodajniKurs, double kupovniKurs, double srednjiKurs) {
+		DnevniKurs dk = new DnevniKurs();
+		dk.setDatum(datum);
+		dk.setValuta(valuta);
+		dk.setProdajniKurs(prodajniKurs);
+		dk.setSrednjiKurs(srednjiKurs);
+		dk.setKupovniKurs(kupovniKurs);
+		listaKurseva.add(dk);
 	}
 
 	@Override
 	public void obrisiDnevniKurs(GregorianCalendar datum) {
-		// TODO Auto-generated method stub
+		int i = 0;
+		while(i<listaKurseva.size()){
+			DnevniKurs dk = listaKurseva.get(i);
+			if (dk.getDatum().equals(datum)) {
+				listaKurseva.remove(i);
+				return;
+			}
+			i++;
+		}
 		
 	}
 
 	@Override
-	public List<DnevniKurs> pronadjiKurs(GregorianCalendar datum) {
-		// TODO Auto-generated method stub
+	public DnevniKurs pronadjiKurs(GregorianCalendar datum) {
+		int i = 0;
+		while(i<listaKurseva.size()){
+			DnevniKurs dk = listaKurseva.get(i);
+			if (dk.getDatum().equals(datum)) {				
+				return dk;
+			}
+			i++;
+		}
 		return null;
 	}
 	
