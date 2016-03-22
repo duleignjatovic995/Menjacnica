@@ -27,27 +27,22 @@ public class DnevniKursKolekcija implements IMenjacnica{
 
 	@Override
 	public void obrisiDnevniKurs(GregorianCalendar datum) {
-		int i = 0;
-		while(i<listaKurseva.size()){
-			DnevniKurs dk = listaKurseva.get(i);
-			if (dk.getDatum().equals(datum)) {
+		for (int i = 0; i < listaKurseva.size(); i++) {
+			DnevniKurs dkr = listaKurseva.get(i);
+			if (dkr.getDatum().equals(datum)) {
 				listaKurseva.remove(i);
 				return;
 			}
-			i++;
-		}
-		
+		}		
 	}
 
 	@Override
 	public DnevniKurs pronadjiKurs(GregorianCalendar datum) {
-		int i = 0;
-		while(i<listaKurseva.size()){
-			DnevniKurs dk = listaKurseva.get(i);
-			if (dk.getDatum().equals(datum)) {				
-				return dk;
+		for (int i = 0; i < listaKurseva.size(); i++) {
+			DnevniKurs dkr = listaKurseva.get(i);
+			if (dkr.getDatum().equals(datum)) {
+				return dkr;
 			}
-			i++;
 		}
 		return null;
 	}
