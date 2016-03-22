@@ -9,13 +9,23 @@ public class Valuta {
 		return naziv;
 	}
 	public void setNaziv(String naziv) {
-		this.naziv = naziv;
+		if (naziv == null || naziv.isEmpty()) {
+			throw new RuntimeException("Naziv valute ne sme biti null ili prazan string.");
+		} else {
+			this.naziv = naziv;
+		}
+
 	}
 	public String getSkracenica() {
 		return skracenica;
 	}
 	public void setSkracenica(String skracenica) {
-		this.skracenica = skracenica;
+		if (skracenica == null || skracenica.length()<4) {
+			throw new RuntimeException("Skracenica valute ne sme biti null ili string kraci od 4 karaktera.");
+		} else {
+			this.skracenica = skracenica;
+		}
+
 	}
 	@Override
 	public int hashCode() {

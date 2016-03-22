@@ -18,31 +18,55 @@ public class DnevniKurs {
 		return datum;
 	}
 	public void setDatum(GregorianCalendar datum) {
-		this.datum = datum;
+		if (datum == null) {
+			throw new RuntimeException("Datum ne sme biti null.");
+		} else {
+			this.datum = datum;
+		}
 	}
 	public Valuta getValuta() {
 		return valuta;
 	}
 	public void setValuta(Valuta valuta) {
-		this.valuta = valuta;
+		if (valuta==null) {
+			throw new RuntimeException("Valuta ne sme biti null.");
+		} else {
+			this.valuta = valuta;
+		}
+
 	}
 	public double getProdajniKurs() {
 		return prodajniKurs;
 	}
 	public void setProdajniKurs(double prodajniKurs) {
+		if (prodajniKurs <= 0) {
+			throw new RuntimeException("Prodajni kurs ne sme biti manji od nule.");
+		} else {
+
+		}
 		this.prodajniKurs = prodajniKurs;
 	}
 	public double getKupovniKurs() {
 		return kupovniKurs;
 	}
 	public void setKupovniKurs(double kupovniKurs) {
-		this.kupovniKurs = kupovniKurs;
+		if (kupovniKurs <= 0) {
+			throw new RuntimeException("Kupovni kurs ne sme biti manji od nule.");
+		} else {
+			this.kupovniKurs = kupovniKurs;
+		}
+
 	}
 	public double getSrednjiKurs() {
 		return srednjiKurs;
 	}
 	public void setSrednjiKurs(double srednjiKurs) {
-		this.srednjiKurs = srednjiKurs;
+		if (srednjiKurs <= 0) {
+			throw new RuntimeException("Srednji kurs ne sme biti manji od nule.");
+		} else {
+			this.srednjiKurs = srednjiKurs;
+		}
+
 	}
 	@Override
 	public int hashCode() {
