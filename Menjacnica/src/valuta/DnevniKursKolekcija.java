@@ -8,7 +8,7 @@ import valuta.interfejs.IMenjacnica;
 
 public class DnevniKursKolekcija implements IMenjacnica{
 
-	List<DnevniKurs> listaKurseva;
+	List<DnevniKurs> listaKurseva;//lista kurseva
 
 	public DnevniKursKolekcija() {
 		listaKurseva = new LinkedList<>();
