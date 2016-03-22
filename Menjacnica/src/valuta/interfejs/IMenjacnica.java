@@ -1,12 +1,12 @@
 package valuta.interfejs;
 
 import java.util.GregorianCalendar;
-import java.util.List;
 
 import valuta.DnevniKurs;
+import valuta.Valuta;
 
 public interface IMenjacnica {
-	public void dodajDnevniKurs(GregorianCalendar datum);
+	public void dodajDnevniKurs(Valuta valuta, GregorianCalendar datum, double kupovniKurs, double prodajniKurs, double srednjiKurs);
 	public void obrisiDnevniKurs(GregorianCalendar datum);
-	public List<DnevniKurs>pronadjiKurs(GregorianCalendar datum);
+	public DnevniKurs pronadjiKurs(GregorianCalendar datum);
 }

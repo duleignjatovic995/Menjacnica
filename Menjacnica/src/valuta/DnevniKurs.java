@@ -14,6 +14,8 @@ public class DnevniKurs {
 	private double kupovniKurs;
 	private double srednjiKurs;
 	
+
+	
 	public GregorianCalendar getDatum() {
 		return datum;
 	}
